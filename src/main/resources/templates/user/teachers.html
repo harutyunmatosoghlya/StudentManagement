@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+</head>
+<body>
+<table>
+    <a href="/teachers/addTeacher">Add</a> |
+    <a href="/">main</a>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Lesson ID</th>
+    </tr>
+    <tr th:each="user : ${teachers}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.lesson}">-</td>
+    </tr>
+</table>
+</body>
+</html>
